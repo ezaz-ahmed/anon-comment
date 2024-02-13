@@ -1,8 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/react';
+import { Caveat } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const caveat = Caveat({ weight: '400', subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Hey! 💖 Alert: Love Warning',
@@ -25,7 +26,8 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={caveat.className}>{children}</body>
+      <Analytics />
     </html>
   )
 } 
